@@ -118,6 +118,12 @@ return [
             'replace_placeholders' => true,
         ],
 
+        'contact' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/contact.log'),
+            'level' => 'info',
+        ],
+
         'null' => [
             'driver' => 'monolog',
             'handler' => NullHandler::class,

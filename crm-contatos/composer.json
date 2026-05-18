@@ -11,6 +11,8 @@
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.8",
+        "laravel/reverb": "*",
+        "laravel/sanctum": "^4.0",
         "laravel/tinker": "^3.0"
     },
     "require-dev": {
@@ -28,7 +30,8 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Domain\\": "src/Domain/",
-            "Infrastructure\\": "src/Infrastructure/"
+            "Infrastructure\\": "src/Infrastructure/",
+            "Application\\": "src/Application/"
         }
     },
     "autoload-dev": {

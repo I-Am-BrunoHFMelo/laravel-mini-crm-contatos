@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Events\ContactScoreProcessed;
+use App\Listeners\LogContactScore;
+use Domain\Repositories\ContactRepositoryInterface;
+use Infrastructure\Repositories\EloquentContactRepository;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +16,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(
+            ContactRepositoryInterface::class,
+            EloquentContactRepository::class
+        );
     }
 
     /**
@@ -19,6 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Event::listen(
+            ContactScoreProcessed::class,
+            LogContactScore::class
+        );
     }
 }

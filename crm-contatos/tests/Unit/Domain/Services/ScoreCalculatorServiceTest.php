@@ -30,7 +30,6 @@ class ScoreCalculatorServiceTest extends TestCase
 
     public function test_should_calculate_minimum_score_from_other_state(): void
     {
-        // Regras:
         // Personal (+0), .com (+0) -> 0
         // Single Name (+0) -> 0
         // Other State Phone (+10) -> 10
